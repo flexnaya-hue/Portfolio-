@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Géovani | Cyber Portfolio</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <style>
+    :root{
+      --bg:#05080f;
+      --neon:#00ffd5;
+      --text:#e6f1ff;
+      --card:rgba(255,255,255,0.08);
+    }
+
+    *{margin:0;padding:0;box-sizing:border-box;}
+
+    body{
+      font-family:'Poppins',sans-serif;
+      background:radial-gradient(circle at top, #0b1c2d, var(--bg));
+      color:var(--text);
+      overflow-x:hidden;
+    }
+
+    /* INTRO */
+    .intro{
+      position:fixed;
+      inset:0;
+      background:black;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      z-index:9999;
+      animation:fadeOut 1s ease forwards;
+      animation-delay:2.5s;
+    }
+
+    .intro h1{
+      font-family:'Orbitron';
+      font-size:52px;
+      color:var(--neon);
+      animation:glitch 1.5s infinite;
+    }
+
+    @keyframes fadeOut{to{opacity:0;visibility:hidden;}}
+    @keyframes glitch{
+      0%{text-shadow:2px 2px var(--neon);} 
+      50%{text-shadow:-2px -2px #00ff88;} 
+      100%{text-shadow:2px -2px var(--neon);} 
+    }
+
+    header{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:20px 40px;
+    }
+
+    .logo{
+      font-family:'Orbitron';
+      font-size:28px;
+      color:var(--neon);
+      animation:glow 2s infinite alternate;
+    }
+
+    @keyframes glow{
+      from{text-shadow:0 0 10px var(--neon);}
+      to{text-shadow:0 0 25px var(--neon);}
+    }
+
+    nav a{
+      margin-left:20px;
+      cursor:pointer;
+      color:inherit;
+      text-decoration:none;
+    }
+
+    section{padding:60px 40px;}
+
+    .hero{
+      min-height:80vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+    }
+
+    .hero h1{
+      font-family:'Orbitron';
+      font-size:48px;
+    }
+
+    .hero span{color:var(--neon);}
+
+    .hidden{display:none;}
+
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+      gap:25px;
+    }
+
+    .card{
+      background:var(--card);
+      padding:20px;
+      border-radius:20px;
+      text-align:center;
+      transition:0.4s;
+    }
+
+    .card:hover{
+      transform:scale(1.05);
+      box-shadow:0 0 20px var(--neon);
+    }
+
+    .card img{
+      width:100%;
+      height:160px;
+      object-fit:cover;
+      border-radius:15px;
+      margin-bottom:10px;
+    }
+
+    form{
+      max-width:600px;
+      margin:30px auto 0;
+      display:grid;
+      gap:15px;
+    }
+
+    input,textarea{
+      padding:12px;
+      border-radius:10px;
+      border:none;
+    }
+
+    button{
+      padding:12px;
+      border:none;
+      border-radius:10px;
+      background:var(--neon);
+      font-weight:600;
+      cursor:pointer;
+    }
+
+    /* CONTACT FIX */
+    #contact{
+      text-align:center;
+    }
+
+    #contact a{
+      text-decoration:none;
+      color:inherit;
+    }
+
+    #contact p{
+      margin:8px 0;
+      font-size:16px;
+    }
+
+    footer{
+      text-align:center;
+      padding:30px;
+      opacity:0.7;
+    }
+
+    @media(max-width:768px){
+      .hero h1{font-size:34px;}
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="intro"><h1>GÉOVANI</h1></div>
+
+<header>
+  <div class="logo">GÉOVANI</div>
+  <nav>
+    <a onclick="showSection('about')">À propos</a>
+    <a onclick="showSection('projects')">Projets</a>
+    <a onclick="showSection('contact')">Contact</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <div>
+    <h1>Je suis <span>Géovani</span></h1>
+    <p>16 ans d'origine 🇧🇯 • Classe de première • Lycée Les Palmiers  
+      <br>🎮 Gamer • ⚽ Football • 💻 Programmation • 🛡️ Hack éthique
+    </p>
+  </div>
+</section>
+
+<section id="about" class="hidden">
+  <h2>🎮 Jeux préférés</h2>
+  <div class="grid">
+    <div class="card"><img src="GTA5.jpg"><p>GTA 5</p></div>
+    <div class="card"><img src="FC26jpg.jpg"><p>FC 26</p></div>
+    <div class="card"><img src="Fortnite.jpg"><p>Fortnite</p></div>
+    <div class="card"><img src="Sans titre.jpg"><p>Call of Duty</p></div>
+    <div class="card"><img src="Minecrat.jpg"><p>Minecraft</p></div>
+  </div>
+
+  <br>
+
+  <h2>⚽ Joueurs préférés</h2>
+  <div class="grid">
+    <div class="card"><img src="Messi.jpg"><p>Messi</p></div>
+    <div class="card"><img src="CR7.jpg"><p>CR7</p></div>
+    <div class="card"><img src="Mbappe.jpg"><p>Mbappé</p></div>
+    <div class="card"><img src="Halland.jpg"><p>Haaland</p></div>
+    <div class="card"><img src="Neymar.jpg"><p>Neymar</p></div>
+    <div class="card"><img src="de brune.jpg"><p>De Bruyne</p></div>
+  </div>
+</section>
+
+<section id="projects" class="hidden">
+  <h2>🚀 Projets</h2>
+  <div class="grid">
+    <div class="card"><i class="fa-solid fa-laptop-code"></i><p>Programmation</p></div>
+    <div class="card"><i class="fa-solid fa-gamepad"></i><p>Gaming</p></div>
+    <div class="card"><i class="fa-solid fa-shield-halved"></i><p>Mini Tool Sécurité</p></div>
+  </div>
+</section>
+
+<section id="contact" class="hidden">
+  <h2>📩 Contact</h2>
+
+  <p><i class="fa-brands fa-whatsapp"></i> 0140585725</p>
+  <p><i class="fa-brands fa-facebook"></i> Djey Stark</p>
+  <p><i class="fa-solid fa-phone"></i> 0191124334</p>
+  <p><i class="fa-solid fa-envelope"></i> flexnaya@gmail.com</p>
+
+  <form>
+    <input type="text" placeholder="👤 Votre nom" required>
+    <input type="email" placeholder="📧 Votre email" required>
+    <input type="text" placeholder="📱 Numéro">
+    <textarea rows="4" placeholder="💬 Message"></textarea>
+    <button>Envoyer</button>
+  </form>
+</section>
+
+<footer>
+  © 2026 • Géovani • Portfolio • Les Palmiers • MT
+  <p>
+    <i class="fa-brands fa-google"></i>
+    <i class="fa-brands fa-github"></i>
+    <i class="fa-brands fa-x-twitter"></i>
+    <i class="fa-solid fa-handshake"></i>
+    <i class="fa-solid fa-gamepad"></i>
+  </p>
+</footer>
+
+<script>
+  function showSection(id){
+    document.querySelectorAll('section').forEach(s=>{
+      if(s.id) s.classList.add('hidden');
+    });
+    document.getElementById(id).classList.remove('hidden');
+    window.scrollTo({top:0,behavior:'smooth'});
+  }
+</script>
+
+</body>
+</html>
